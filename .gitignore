@@ -1,0 +1,16 @@
+# Compiled Java class files
+*.class
+
+# IDE configuration files
+.idea/
+.vscode/
+*.iml
+*.iws
+
+# Log files
+*.log
+
+# Any other large files (add more if needed)
+*.mp4
+*.zip
+*.png

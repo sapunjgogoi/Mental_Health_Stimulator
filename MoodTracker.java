@@ -1,18 +1,20 @@
-// package Mental_Health_Simulation_Assistant;
+import java.util.Scanner;
 
-import java.io.FileWriter;
-import java.io.IOException;
-
+/**
+ * Handles asking the user about their current mood.
+ */
 public class MoodTracker {
-    public void saveMood(User user) {
-        try {
-            FileWriter writer = new FileWriter(user.getName() + "_mood_history.txt", true);
-            int latestMood = user.getMoodHistory().get(user.getMoodHistory().size() - 1);
-            writer.write("Mood: " + latestMood + "\n");
-            writer.close();
-            System.out.println("💾 Mood history saved!");
-        } catch (IOException e) {
-            System.out.println("Error saving mood: " + e.getMessage());
-        }
+    /**
+     * Prompts the user for their mood and returns their input.
+     * @param sc The Scanner object to read user input.
+     * @param user The User object for a personalized greeting.
+     * @return The mood entered by the user as a String.
+     */
+    public String askMood(Scanner sc, User user) {
+        System.out.println("\nHi " + user.getName() + ", how are you feeling today? ");
+        System.out.println("Options: Happy, Sad, Anxious, Angry, Tired, Excited, Okay");
+        System.out.print("Your mood: ");
+        String mood = sc.nextLine();
+        return mood;
     }
 }
